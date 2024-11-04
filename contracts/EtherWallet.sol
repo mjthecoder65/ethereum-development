@@ -4,8 +4,8 @@ pragma solidity 0.8.21;
 
 contract EtherWallet {
     address payable public owner;
-    event Received(address _sender, uint256 _amount);
-    event Withdrew(address _sender, uint256 _amount);
+    event Received(address sender, uint256 amount);
+    event Withdrew(address sender, uint256 amount);
 
     mapping(address => uint256) public balances;
 
