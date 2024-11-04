@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.8.2 <0.9.0;
+pragma solidity >=0.8.21 <0.9.0;
 
-contract TheBlockchainMessenger {
+contract Messenger {
     uint256 public numberOfUpdates;
     address public owner;
-    string public message;
+    string public message = "inital deployment";
 
     constructor() {
         owner = msg.sender;
@@ -16,5 +16,9 @@ contract TheBlockchainMessenger {
         require(msg.sender == owner, "Only owner can update the message");
         message = _newMessage;
         numberOfUpdates++;
+    }
+
+    function viewMessage() public view returns (string memory) {
+        return message;
     }
 }
